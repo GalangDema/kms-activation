@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aktivasi Klien KMS & Kunci Produk by Galang Nichola Demalima</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 280px;
+      background-color: #f8f9fa;
+      border-right: 1px solid #dee2e6;
+      padding: 1rem;
+      overflow-y: auto;
+      position: fixed;
+      top: 56px;
+      bottom: 0;
+    }
+
+    .main-content {
+      margin-left: 280px;
+      padding: 2rem;
+    }
+
+    footer {
+      background-color: #f8f9fa;
+      text-align: center;
+      padding: 1rem;
+      border-top: 1px solid #dee2e6;
+    }
+
+    h2 {
+      margin-top: 2rem;
+    }
+
+    pre {
+      background: #f1f1f1;
+      padding: 0.75rem;
+      border-radius: 6px;
+    }
+
+    table {
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">Aktivasi KMS & Kunci Produk</a>
+    </div>
+  </nav>
+
+  <div class="content-wrapper">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h5 class="fw-bold">Navigasi</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link" href="#pendahuluan">Pendahuluan</a></li>
+        <li class="nav-item"><a class="nav-link" href="#persyaratan">Persyaratan Aktivasi</a></li>
+        <li class="nav-item"><a class="nav-link" href="#langkah">Langkah Aktivasi KMS</a></li>
+        <li class="nav-item"><a class="nav-link" href="#langkah2">Langkah Aktivasi KMS (Galang Version)</a></li>
+        <li class="nav-item"><a class="nav-link" href="#kunci">Kunci Produk (GVLK)</a></li>
+        <li class="nav-item"><a class="nav-link" href="#troubleshooting">Troubleshooting</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <section id="pendahuluan">
+        <h2>Pendahuluan</h2>
+        <p>
+          Key Management Service (KMS) memungkinkan organisasi untuk mengaktifkan Windows dan Office tanpa harus
+          menghubungkan komputer langsung ke server Microsoft. Aktivasi dilakukan secara otomatis melalui jaringan
+          internal.
+        </p>
+      </section>
+
+      <section id="persyaratan">
+        <h2>Persyaratan Aktivasi</h2>
+        <ul>
+          <li>Sistem operasi yang mendukung KMS (Windows 8 atau lebih baru, Windows Server 2012 ke atas).</li>
+          <li>Server KMS di jaringan lokal dengan port TCP 1688 terbuka.</li>
+          <li>Koneksi antara klien dan server KMS aktif.</li>
+          <li>Penggunaan kunci GVLK yang sesuai dengan edisi sistem operasi.</li>
+        </ul>
+      </section>
+
+      <section id="langkah">
+        <h2>Langkah Aktivasi KMS</h2>
+        <ol>
+          <li>Instal Windows atau Office edisi volume di komputer klien.</li>
+          <li>Masukkan kunci GVLK yang sesuai.</li>
+          <li>Pastikan komputer dapat mengakses server KMS.</li>
+          <li>Jalankan perintah aktivasi:
+            <pre><code>slmgr /ato</code></pre>
+          </li>
+          <li>Periksa status aktivasi:
+            <pre><code>slmgr /xpr</code></pre>
+          </li>
+        </ol>
+      </section>
+
+      <section id="langkah2">
+        <h2>Langkah Aktivasi KMS (Galang Version)</h2>
+        <ol>
+          <li>Jalankan perintah aktivasi:
+            <pre><code>slmgr /upk<br>slmgr /cpky<br>slmgr /ipk [Serial key your windows version]<br>slmgr /skms kms8.msguides.com<br>slmgr /ato</code></pre>
+          </li>
+        </ol>
+      </section>
+
+      <section id="kunci">
+        <h2>Kunci Produk Klien KMS (GVLK)</h2>
+        <p>Berikut adalah daftar kunci GVLK resmi dari Microsoft Learn untuk berbagai edisi Windows dan Windows Server:
+        </p>
+
+        <h5 class="mt-4">Windows 11 dan Windows 10</h5>
+        <table class="table table-striped table-bordered">
+          <thead class="table-primary">
+            <tr>
+              <th>Edisi</th>
+              <th>Kunci Produk Klien KMS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Windows 11 Pro / Windows 10 Pro</td>
+              <td>W269N-WFGWX-YVC9B-4J6C9-T83GX</td>
+            </tr>
+            <tr>
+              <td>Windows 11 Pro N / Windows 10 Pro N</td>
+              <td>MH37W-N47XK-V7XM9-C7227-GCQG9</td>
+            </tr>
+            <tr>
+              <td>Windows 11 Enterprise / Windows 10 Enterprise</td>
+              <td>NPPR9-FWDCX-D2C8J-H872K-2YT43</td>
+            </tr>
+            <tr>
+              <td>Windows 11 Enterprise N / Windows 10 Enterprise N</td>
+              <td>DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4</td>
+            </tr>
+            <tr>
+              <td>Windows 10 Education</td>
+              <td>NW6C2-QMPVW-D7KKK-3GKT6-VCFB2</td>
+            </tr>
+            <tr>
+              <td>Windows 10 Education N</td>
+              <td>2WH4N-8QGBV-H22JP-CT43Q-MDWWJ</td>
+            </tr>
+            <tr>
+              <td>Windows 10 Enterprise LTSB 2016</td>
+              <td>DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ</td>
+            </tr>
+            <tr>
+              <td>Windows 10 Enterprise LTSC 2019</td>
+              <td>M7XTQ-FN8P6-TTKYV-9D4CC-J462D</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h5 class="mt-4">Windows Server</h5>
+        <table class="table table-striped table-bordered">
+          <thead class="table-secondary">
+            <tr>
+              <th>Edisi</th>
+              <th>Kunci Produk Klien KMS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Windows Server 2025 Datacenter</td>
+              <td>6N379-GR4YY-3M9YY-BXRBH-7WTD4</td>
+            </tr>
+            <tr>
+              <td>Windows Server 2025 Standard</td>
+              <td>2F2KJ-8QCH3-MNBV9-TDQBC-2WJ6H</td>
+            </tr>
+            <tr>
+              <td>Windows Server 2022 Datacenter</td>
+              <td>WX4NM-KYWYW-QJJR4-XV3QB-6VM33</td>
+            </tr>
+            <tr>
+              <td>Windows Server 2022 Standard</td>
+              <td>V6N4W-86M3X-J77X3-JF6XW-D9PRV</td>
+            </tr>
+            <tr>
+              <td>Windows Server 2019 Datacenter</td>
+              <td>WMDGN-G9PQG-XVVXX-R3X43-63DFG</td>
+            </tr>
+            <tr>
+              <td>Windows Server 2019 Standard</td>
+              <td>N69G4-B89J2-4G8F4-WWYCC-J464C</td>
+            </tr>
+            <tr>
+              <td>Windows Server 2016 Datacenter</td>
+              <td>CB7KF-BWN84-R7R2Y-793K2-8XDDG</td>
+            </tr>
+            <tr>
+              <td>Windows Server 2016 Standard</td>
+              <td>WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Sumber resmi: <a
+            href="https://learn.microsoft.com/id-id/windows-server/get-started/kms-client-activation-keys"
+            target="_blank">Microsoft Learn - KMS Client Activation Keys</a></p>
+      </section>
+
+      <section id="troubleshooting">
+        <h2>Troubleshooting</h2>
+        <ul>
+          <li>Pastikan DNS record <code>_VLMCS._TCP</code> tersedia di jaringan.</li>
+          <li>Port TCP 1688 tidak diblokir oleh firewall.</li>
+          <li>Gunakan perintah <code>nslookup -type=srv _vlmcs._tcp</code> untuk memeriksa ketersediaan KMS server.</li>
+          <li>Periksa log di Event Viewer untuk detail error.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Galang Nichola Demalima
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
