@@ -2,265 +2,386 @@
 <html lang="id">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aktivasi Klien KMS & Kunci Produk by Galang Nichola Demalima</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ KMS Activation Portal - by Galang Nichola Demalima</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- 1. VARIABLE CSS (Diperbarui untuk desain modern) --- */
+        :root {
+            --bg-dark: #000000;
+            --bg-medium: #111111; 
+            --primary-neon: #00e1ff; /* Biru Cyan Neon */
+            --secondary-neon: #ff00ff; /* Magenta Neon */
+            --text-light: #e6edf3;
+            --code-bg: #0d1117;
+            --border-glow: #00b4d8;
+        }
 
-  <style>
-    :root {
-      --bg-dark: #0d1117;
-      --primary-blue: #00b4d8;
-      --text-light: #e6edf3;
-      --menu-bg: #161b22;
-    }
+        /* --- 2. BASE STYLES --- */
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        /* HEADER (Navbar) */
+        .navbar {
+            background: rgba(17, 17, 17, 0.9);
+            backdrop-filter: blur(5px);
+            border-bottom: 2px solid var(--border-glow);
+            box-shadow: 0 0 10px rgba(0, 225, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+        .navbar-brand {
+            color: var(--primary-neon) !important;
+            text-shadow: 0 0 5px var(--primary-neon);
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 600;
+        }
 
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-light);
-      font-family: "Segoe UI", sans-serif;
-      scroll-behavior: smooth;
-    }
+        /* JUDUL SECTION */
+        h2 {
+            color: var(--primary-neon);
+            border-bottom: 1px solid var(--secondary-neon);
+            padding-bottom: 5px;
+            margin-top: 2rem;
+            text-shadow: 0 0 3px rgba(0, 225, 255, 0.4);
+        }
 
-    .navbar {
-      background: linear-gradient(90deg, #007bff, #00b4d8);
-      box-shadow: 0 0 15px #00b4d8;
-    }
+        /* KONTEN CARD */
+        .content-card {
+            background-color: var(--bg-medium);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .content-card:hover {
+            box-shadow: 0 4px 20px rgba(0, 225, 255, 0.2), 0 0 10px var(--primary-neon);
+        }
 
-    h2 {
-      color: var(--primary-blue);
-      border-bottom: 1px solid #21262d;
-      padding-bottom: 5px;
-      margin-top: 2rem;
-    }
+        /* --- 3. CODE BLOCK & TABLE --- */
+        pre {
+            background: var(--code-bg);
+            color: var(--secondary-neon);
+            border-radius: 6px;
+            padding: 1rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            border-left: 5px solid var(--primary-neon);
+            position: relative;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.9em;
+            cursor: pointer;
+        }
+        
+        .code-block-wrapper {
+            position: relative;
+            margin-bottom: 15px;
+        }
 
-    pre {
-      background: #161b22;
-      color: #00d4ff;
-      border-radius: 6px;
-      padding: 0.75rem;
-    }
+        .copy-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: rgba(0, 225, 255, 0.1);
+            color: var(--primary-neon);
+            border: 1px solid var(--primary-neon);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+            opacity: 0.7;
+        }
+        .copy-btn:hover {
+            background: rgba(0, 225, 255, 0.3);
+            opacity: 1;
+        }
 
-    .table {
-      color: var(--text-light);
-    }
+        .table {
+            color: var(--text-light);
+        }
 
-    .table thead {
-      background-color: #21262d;
-      color: var(--primary-blue);
-    }
+        .table thead {
+            background-color: #2a002a;
+            color: var(--secondary-neon);
+        }
+        .table-striped > tbody > tr:nth-of-type(odd) > * {
+            background-color: #1a011a !important; 
+        }
 
-    a {
-      color: var(--primary-blue);
-      text-decoration: none;
-    }
+        /* --- 4. LINKS & FOOTER --- */
+        a {
+            color: var(--primary-neon);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
 
-    a:hover {
-      color: #00e1ff;
-      text-decoration: underline;
-    }
+        a:hover {
+            color: #4df7ff;
+            text-decoration: underline;
+        }
 
-    footer {
-      background-color: #161b22;
-      text-align: center;
-      padding: 1rem;
-      border-top: 1px solid #30363d;
-      color: #8b949e;
-      margin-top: 3rem;
-    }
+        footer {
+            background-color: var(--bg-medium);
+            text-align: center;
+            padding: 1rem;
+            border-top: 1px solid #30363d;
+            color: #8b949e;
+            margin-top: 3rem;
+            font-family: 'Roboto Mono', monospace;
+        }
 
-    /* Floating Navigation Button */
-    .floating-btn {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: var(--primary-blue);
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      color: #fff;
-      font-size: 28px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 0 15px #00b4d8;
-      cursor: pointer;
-      z-index: 1000;
-      transition: all 0.3s ease;
-    }
+        /* --- 5. FLOATING MENU --- */
+        .floating-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: var(--secondary-neon);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            color: var(--bg-dark);
+            font-size: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 15px var(--secondary-neon);
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
 
-    .floating-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 25px #00e1ff;
-    }
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px var(--secondary-neon);
+        }
 
-    /* Floating Menu */
-    .floating-menu {
-      position: fixed;
-      bottom: 90px;
-      right: 25px;
-      background: var(--menu-bg);
-      border: 1px solid #30363d;
-      border-radius: 12px;
-      box-shadow: 0 0 15px #00b4d8;
-      display: none;
-      flex-direction: column;
-      padding: 10px 0;
-      z-index: 999;
-      width: 220px;
-    }
+        .floating-menu {
+            position: fixed;
+            bottom: 90px;
+            right: 25px;
+            background: var(--bg-medium);
+            border: 1px solid var(--secondary-neon);
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.7);
+            display: none;
+            flex-direction: column;
+            padding: 10px 0;
+            z-index: 999;
+            width: 260px; 
+        }
 
-    .floating-menu a {
-      color: var(--text-light);
-      padding: 10px 20px;
-      display: block;
-      text-decoration: none;
-      transition: 0.2s;
-    }
+        .floating-menu a {
+            color: var(--text-light);
+            padding: 10px 20px;
+            display: block;
+            text-decoration: none;
+            transition: 0.2s;
+            font-size: 0.95rem;
+        }
 
-    .floating-menu a:hover {
-      background-color: #21262d;
-      color: var(--primary-blue);
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    section {
-      animation: fadeInUp 0.5s ease;
-      scroll-margin-top: 80px;
-    }
-  </style>
+        .floating-menu a:hover {
+            background-color: #333;
+            color: var(--primary-neon);
+        }
+        
+        /* Animasi scroll/load */
+        section {
+            animation: fadeInScale 0.6s ease-out forwards;
+            scroll-margin-top: 80px;
+            opacity: 0;
+        }
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand fw-bold" href="#">⚡ KMS Activation Portal</a>
+      <span class="text-light ms-auto d-none d-md-block" id="statusMessage">| <i class="fas fa-lock-open me-1"></i> Status: Awaiting Client Connection...</span>
     </div>
   </nav>
 
-  <!-- Floating Button -->
   <button class="floating-btn" id="menuToggle">🧭</button>
 
-  <!-- Floating Menu -->
   <div class="floating-menu" id="menuList">
-    <a href="#pendahuluan">📘 Pendahuluan</a>
-    <a href="#persyaratan">⚙️ Persyaratan Aktivasi</a>
-    <a href="#langkah"> Langkah Aktivasi</a>
-    <a href="#langkah2">💡 Aktivasi KMS Custom by Galang</a>
-    <a href="#kunci">🔑 Kunci Produk (GVLK)</a>
-    <a href="#troubleshooting">🧩 Troubleshooting</a>
+    <a href="#pendahuluan"><i class="fas fa-book me-2"></i> Pendahuluan</a>
+    <a href="#persyaratan"><i class="fas fa-cogs me-2"></i> Persyaratan Aktivasi</a>
+    <a href="#langkah"><i class="fas fa-list-ol me-2"></i> Langkah Aktivasi</a>
+    <a href="#langkah2"><i class="fas fa-laptop-code me-2"></i> Aktivasi KMS Custom by Galang</a>
+    <a href="#kunci"><i class="fas fa-key me-2"></i> Kunci Produk (GVLK)</a>
+    <a href="#troubleshooting"><i class="fas fa-wrench me-2"></i> Troubleshooting</a>
   </div>
 
-  <!-- Main Content -->
   <div class="container mt-5 pt-4">
-    <section id="pendahuluan">
-      <h2>Pendahuluan</h2>
-      <p><b>Key Management Service (KMS)</b> memungkinkan organisasi untuk mengaktifkan Windows dan Office tanpa harus
-        terhubung langsung ke server Microsoft. Aktivasi dilakukan secara otomatis melalui jaringan internal dengan
-        sistem volume license.</p>
-    </section>
+    
+    <div class="content-card mt-5">
+        <section id="pendahuluan">
+          <h2><i class="fas fa-book me-2"></i> Pendahuluan</h2>
+          <p><b>Key Management Service (KMS)</b> memungkinkan organisasi untuk mengaktifkan Windows dan Office tanpa harus
+            terhubung langsung ke server Microsoft. Aktivasi dilakukan secara otomatis melalui jaringan internal dengan
+            sistem volume license.</p> 
+        </section>
+    </div>
 
-    <section id="persyaratan">
-      <h2>Persyaratan Aktivasi</h2>
-      <ul>
-        <li>Windows 8 / Server 2012 atau lebih baru.</li>
-        <li>Server KMS aktif dengan port <code>1688</code> terbuka.</li>
-        <li>Koneksi jaringan antar perangkat lancar.</li>
-        <li>Gunakan kunci GVLK sesuai versi Windows.</li>
-      </ul>
-    </section>
+    <div class="content-card">
+        <section id="persyaratan">
+          <h2><i class="fas fa-cogs me-2"></i> Persyaratan Aktivasi</h2>
+          <ul>
+            <li>Windows 8 / Server 2012 atau lebih baru.</li>
+            <li>Server KMS aktif dengan port <code>1688</code> terbuka.</li>
+            <li>Koneksi jaringan antar perangkat lancar.</li>
+            <li>Gunakan kunci GVLK sesuai versi Windows.</li>
+          </ul>
+        </section>
+    </div>
 
-    <section id="langkah">
-      <h2>Langkah Aktivasi KMS</h2>
-      <ol>
-        <li>Instal Windows/Office edisi volume.</li>
-        <li>Masukkan kunci GVLK yang sesuai.</li>
-        <li>Pastikan komputer dapat mengakses server KMS.</li>
-        <li>Jalankan perintah:
-          <pre><code>slmgr /ato</code></pre>
-        </li>
-        <li>Cek status aktivasi:
-          <pre><code>slmgr /xpr</code></pre>
-        </li>
-      </ol>
-    </section>
+    <div class="content-card">
+        <section id="langkah">
+          <h2><i class="fas fa-list-ol me-2"></i> Langkah Aktivasi KMS</h2>
+          <ol>
+            <li>Instal Windows/Office edisi volume.</li>
+            <li>Masukkan kunci GVLK yang sesuai.</li>
+            <li>Pastikan komputer dapat mengakses server KMS.</li>
+            <li>Jalankan perintah:
+                <div class="code-block-wrapper">
+                    <pre id="code-1"><code>slmgr /ato</code></pre>
+                    <button class="copy-btn" onclick="copyCode('code-1')"><i class="fas fa-copy"></i> Copy</button>
+                </div>
+            </li>
+            <li>Cek status aktivasi:
+                <div class="code-block-wrapper">
+                    <pre id="code-2"><code>slmgr /xpr</code></pre>
+                    <button class="copy-btn" onclick="copyCode('code-2')"><i class="fas fa-copy"></i> Copy</button>
+                </div>
+            </li>
+          </ol>
+        </section>
+    </div>
 
-    <section id="langkah2">
-      <h2>Panduan Aktivasi KMS (Custom by Galang)</h2>
-      <pre><code>slmgr /upk
+    <div class="content-card">
+        <section id="langkah2">
+          <h2><i class="fas fa-laptop-code me-2"></i> Panduan Aktivasi KMS (Custom by Galang)</h2>
+          <div class="code-block-wrapper">
+            <pre id="code-3"><code>slmgr /upk
 slmgr /cpky
 slmgr /ipk [Serial key your windows version]
 slmgr /skms kms8.msguides.com
 slmgr /ato</code></pre>
-    </section>
+            <button class="copy-btn" onclick="copyCode('code-3')"><i class="fas fa-copy"></i> Copy</button>
+          </div>
+        </section>
+    </div>
 
-    <section id="kunci">
-      <h2>Kunci Produk Klien KMS (GVLK)</h2>
-      <p>Daftar resmi dari <a
-          href="https://learn.microsoft.com/id-id/windows-server/get-started/kms-client-activation-keys"
-          target="_blank">Microsoft Learn</a>.</p>
+    <div class="content-card">
+        <section id="kunci">
+          <h2><i class="fas fa-key me-2"></i> Kunci Produk Klien KMS (GVLK)</h2>
+          <p>Daftar resmi dari <a
+              href="https://learn.microsoft.com/id-id/windows-server/get-started/kms-client-activation-keys"
+              target="_blank">Microsoft Learn <i class="fas fa-external-link-alt"></i></a>.</p>
 
-      <h5>🪟 Windows 11 dan 10</h5>
-      <table class="table table-dark table-striped table-bordered">
-        <thead>
-          <tr>
-            <th>Edisi</th>
-            <th>Kunci Produk</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Windows 11/10 Pro</td>
-            <td>W269N-WFGWX-YVC9B-4J6C9-T83GX</td>
-          </tr>
-          <tr>
-            <td>Windows 11/10 Enterprise</td>
-            <td>NPPR9-FWDCX-D2C8J-H872K-2YT43</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+          <h5>🪟 Windows 11 dan 10</h5>
+          <table class="table table-dark table-striped table-bordered">
+            <thead>
+              <tr>
+                <th>Edisi</th>
+                <th>Kunci Produk</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Windows 11/10 Pro</td>
+                <td>W269N-WFGWX-YVC9B-4J6C9-T83GX</td>
+              </tr>
+              <tr>
+                <td>Windows 11/10 Enterprise</td>
+                <td>NPPR9-FWDCX-D2C8J-H872K-2YT43</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+    </div>
 
-    <section id="troubleshooting">
-      <h2>Troubleshooting</h2>
-      <ul>
-        <li>Pastikan DNS record <code>_VLMCS._TCP</code> tersedia.</li>
-        <li>Pastikan port 1688 tidak diblokir firewall.</li>
-        <li>Gunakan <code>nslookup -type=srv _vlmcs._tcp</code> untuk cek server KMS.</li>
-        <li>Cek log Event Viewer untuk detail error.</li>
-      </ul>
-    </section>
+    <div class="content-card">
+        <section id="troubleshooting">
+          <h2><i class="fas fa-wrench me-2"></i> Troubleshooting</h2>
+          <ul>
+            <li>Pastikan DNS record <code>_VLMCS._TCP</code> tersedia.</li>
+            <li>Pastikan port 1688 tidak diblokir firewall.</li>
+            <li>Gunakan <code>nslookup -type=srv _vlmcs._tcp</code> untuk cek server KMS.</li>
+            <li>Cek log Event Viewer untuk detail error.</li>
+          </ul>
+        </section>
+    </div>
   </div>
 
-  <footer>© 2025 Galang Nichola Demalima — All rights reserved.</footer>
+  <footer>
+    <i class="fas fa-terminal me-2"></i> © 2025 Galang Nichola Demalima — All rights reserved.
+  </footer>
 
   <script>
-    // Floating menu toggle
+    // --- LOGIC: FLOATING MENU ---
     const btn = document.getElementById("menuToggle");
     const menu = document.getElementById("menuList");
+    
     btn.addEventListener("click", () => {
-      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+        const isVisible = menu.style.display === "flex";
+        menu.style.display = isVisible ? "none" : "flex";
     });
 
-    // Tutup menu setelah klik
     document.querySelectorAll(".floating-menu a").forEach(link => {
-      link.addEventListener("click", () => {
-        menu.style.display = "none";
-      });
+        link.addEventListener("click", () => {
+            // Tutup menu setelah klik dan beri jeda untuk scroll smooth
+            setTimeout(() => {
+                menu.style.display = "none";
+            }, 300); 
+        });
     });
+    
+    // --- LOGIC: COPY CODE FUNCTION ---
+    function copyCode(id) {
+        const codeElement = document.getElementById(id).querySelector('code');
+        const textToCopy = codeElement.innerText.trim();
+        const copyBtn = document.querySelector(`#${id} + .copy-btn`);
+
+        // Use the modern clipboard API
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            const originalText = copyBtn.innerHTML;
+            copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            copyBtn.style.backgroundColor = 'var(--primary-neon)';
+            copyBtn.style.color = 'var(--bg-dark)';
+            
+            setTimeout(() => {
+                copyBtn.innerHTML = originalText;
+                copyBtn.style.backgroundColor = 'rgba(0, 225, 255, 0.1)';
+                copyBtn.style.color = 'var(--primary-neon)';
+            }, 1500);
+        }).catch(err => {
+            console.error('Gagal menyalin kode:', err);
+            alert('Gagal menyalin kode. Silakan salin manual.');
+        });
+    }
   </script>
 </body>
 
